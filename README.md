@@ -16,11 +16,6 @@ oadm router --create --credentials=openshift.local.config/master/openshift-route
 - Crate Persistent Volume
 oc create -f demo/5_persistent_volume.json
 
-- Add privilieged right for cassandra pod
-oc edit scc privileged
-- add last line:
-test-admin
-
 - Create Project
 oc login
 test-admin
@@ -37,7 +32,7 @@ oc logs xxx
 
 - 2) Deployment
 oc create -n todolist-project -f demo/2_1_deploy_app.json
-oc create -n todolist-project -f demo/2_3_deploy_cassandra_node_1.json
+oc create -n todolist-project -f demo/2_2_deploy_db.json
 - Show deployment config via web ui
 
 - 3) Service
